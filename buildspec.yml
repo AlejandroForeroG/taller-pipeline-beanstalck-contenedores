@@ -10,12 +10,12 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...          
       - docker build -t python_application:latest .
-      - docker tag python_application:latest 383962123552.dkr.ecr.us-east-1.amazonaws.com/python_application:latest
+      - docker tag python_application:latest 383962123552.dkr.ecr.us-east-1.amazonaws.com/python_app:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 383962123552.dkr.ecr.us-east-1.amazonaws.com/python_application:latest
+      - docker push 383962123552.dkr.ecr.us-east-1.amazonaws.com/python_app:latest
 artifacts:
   files:
     - '**/*'
